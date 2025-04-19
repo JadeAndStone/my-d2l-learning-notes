@@ -7,8 +7,8 @@ from torchvision import transforms,datasets
 def main():
     batch_size = 256
     data_form=transforms.Compose([transforms.ToTensor(),transforms.Normalize(mean=[0.5],std=[0.5])])
-    trainset=datasets.MNIST(root='./python from the scratch',transform=data_form)
-    testset=datasets.MNIST(root='./python from the scratch',transform=data_form)
+    trainset=datasets.MNIST(root='./number_mnist',transform=data_form)
+    testset=datasets.MNIST(root='./number_mnist',transform=data_form)
     train_iter=data.DataLoader(trainset,batch_size=batch_size,shuffle=False)
     test_iter=data.DataLoader(testset,batch_size=1,shuffle=True)
     net = nn.Sequential(nn.Flatten(), nn.Linear(784, 10))

@@ -6,8 +6,8 @@ from multiprocessing import freeze_support
 def main():
     batch_size=256
     data_form=transforms.Compose([transforms.ToTensor(),transforms.Normalize(mean=[0.5],std=[0.5])])
-    data_set=datasets.MNIST(root='./python from the scratch',transform=data_form)
-    test_set=datasets.MNIST(root='./python from the scratch',transform=data_form)
+    data_set=datasets.MNIST(root='./number_mnist',transform=data_form)
+    test_set=datasets.MNIST(root='./number_mnist',transform=data_form)
     net=nn.Sequential(nn.Flatten(),nn.Linear(784,256),nn.ReLU(),nn.Dropout(0.5),nn.Linear(256,10))
     train_iter=data.DataLoader(data_set,batch_size=batch_size,shuffle=True)
     test_iter=data.DataLoader(test_set,batch_size=batch_size,shuffle=True)
