@@ -26,7 +26,7 @@ def main():
             nn.init.xavier_uniform_(m.weight)
     net.apply(init_weight)
     loss = nn.CrossEntropyLoss()
-    lr=1.0
+    lr=0.2
 #    def updater(batch_size):
 #        return d2l.sgd(net.parameters(), lr, batch_size)
     trainer=torch.optim.SGD(net.parameters(),lr)
